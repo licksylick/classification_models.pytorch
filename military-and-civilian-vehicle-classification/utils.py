@@ -41,7 +41,7 @@ def get_mean_and_std(dataloader):
 
 
 def balance_dataframe(data):
-    data = data.groupby('label')
+    data = data.groupby('class')
     data = pd.DataFrame(data.apply(lambda x: x.sample(data.size().min()).reset_index(drop=True)))
 
     return data
