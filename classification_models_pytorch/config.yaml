@@ -1,0 +1,58 @@
+common:
+  exp_name: test_exp
+  seed: 666
+  batch_size: 8
+  num_workers: 1
+  max_epochs: 4
+  use_cross_validation: False
+  num_splits: 4
+
+dataset:
+  path: dataset
+  img_size: 224
+  val_size: 0.3
+
+trainer:
+  target: pytorch_lightning.Trainer
+  params:
+#    gpus: [0]
+    max_epochs: 20
+
+model:
+  target: models.ClassificationModel
+  params:
+    arch: resnet18
+    pretrained: True
+    num_classes: 2
+
+criterions:
+- target: torch.nn.CrossEntropyLoss
+  weight: 1.0
+  name: cross_entropy
+
+optimizers:
+- target: Adam # optimizer name from torch.optim
+  params:
+    lr: 0.001
+  use_lookahead: True
+
+scheduler:
+  - target: ReduceLROnPlateau
+    monitor: val_loss
+
+metrics:
+- target: torch.nn.functional.cross_entropy
+
+callbacks:
+- target: pytorch_lightning.callbacks.ModelCheckpoint
+  params:
+    filename: best-{epoch:02d}-min-{val_loss:2.2f}
+    monitor: val_loss
+    mode: min
+    save_top_k: 1
+    save_last: true
+- target: pytorch_lightning.callbacks.EarlyStopping
+  params:
+    monitor: val_loss
+    patience: 5
+    mode: min
