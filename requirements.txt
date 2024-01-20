@@ -6,3 +6,4 @@ opencv-python~=4.9.0.80
 pytorch-lightning=1.7.7
 torchmetrics==0.11.4
 tensorboard
+timm
