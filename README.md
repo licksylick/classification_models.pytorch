@@ -39,7 +39,7 @@ Directory with 2 subdirectories: `tran_val` with the number of subdirectories eq
 
 -----
 ### 3. Edit `config.yaml`
-It has many of setting.  
+It has many of settings.  
 The most important:
 * `path` (in `dataset`) - set path to your data
 * `num_classes` (in `model`) - set num_classes appropriate to the task
