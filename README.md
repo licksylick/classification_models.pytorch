@@ -9,13 +9,15 @@ Project with Neural Networks for Image Classification based on PyTorch.
 
 ## 🚀 Train
 
-### 1. Install all necessary libs:
+### 1. Install all necessary libs:  
   ```sh
   pip3 install -r requirements.txt
   ```
+
 Install torch.
 Note: if you are using a GPU, then you need to install CUDA and replace the torch version in `requirements.txt` with the GPU-enabled version.
 Otherwise, the processor will be used.
+
 -----
 ### 2. Dataset structure
 Directory with 2 subdirectories: `tran_val` with the number of subdirectories equal to num classes and `test` with the number of subdirectories equal to num classes:  
@@ -50,12 +52,13 @@ The most important:
 * `callbacks` - pytorch-lightning callbacks for your train
 *  `arch` (in `model` params) - backbone name supported by [timm](https://github.com/huggingface/pytorch-image-models)
   
-<details>
-  <summary>Supported backbones</summary>
 To get all supported backbones names use:
 ```
   timm.list_models()
 ```
+<details>
+  <summary>Supported backbones</summary>
+
 | backbone | backbone | backbone | backbone | backbone | backbone | backbone | backbone | backbone |
 |----------|----------|----------|----------|----------|----------|----------|----------|----------|
 |botnet50ts_256|caformer_b36|caformer_m36|caformer_s18|caformer_s36|cait_m36_384|cait_m48_448|cait_s24_224|cait_s24_384|
