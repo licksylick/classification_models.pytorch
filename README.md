@@ -19,7 +19,6 @@ Otherwise, the processor will be used.
 -----
 ### 2. Dataset structure
 Directory with 2 subdirectories: `tran_val` with the number of subdirectories equal to num classes and `test` with the number of subdirectories equal to num classes:  
-dataset  
  ~~~~
     dataset
      |- train_val
