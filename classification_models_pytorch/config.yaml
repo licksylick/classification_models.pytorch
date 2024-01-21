@@ -16,7 +16,6 @@ trainer:
   target: pytorch_lightning.Trainer
   params:
 #    gpus: [0]
-    max_epochs: 20
 
 model:
   target: models.ClassificationModel
