@@ -200,12 +200,12 @@ Run `inference.py`, specifying the required config (which used for training), pa
 -----
 ## 📝 BibTex
 ```
-@software{AutoTrackAnything,
+@software{classification_models.pytorch,
   author = {Roman Lyskov},
-  title = {AutoTrackAnything},
+  title = {classification_models.pytorch},
   year = {2024},
   url = {https://github.com/licksylick/classification_models.pytorch},
-  Howpublished = {\url{https://github.com/qubvel/segmentation_models.pytorch}}
+  Howpublished = {\url{https://github.com/licksylick/classification_models.pytorch}}
 }
 ```
 
